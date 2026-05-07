@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Codebase Investigator</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">Codebase Investigator</div>
+    <form id="repo-form" class="repo-form">
+      <input id="repo-url" type="url" placeholder="https://github.com/owner/repo" required spellcheck="false" />
+      <button id="repo-btn" type="submit">Load repo</button>
+    </form>
+    <div id="repo-status" class="repo-status"></div>
+    <div id="export-bar" class="export-bar hidden">
+      <a id="export-md" target="_blank" rel="noopener">Export .md</a>
+      <a id="export-json" target="_blank" rel="noopener">Export .json</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="chat" id="chat-pane">
+      <div id="messages" class="messages"></div>
+      <form id="chat-form" class="chat-form">
+        <textarea id="chat-input" rows="2" placeholder="Ask about the code... (Cmd/Ctrl+Enter to send)" disabled></textarea>
+        <button id="chat-btn" type="submit" disabled>Ask</button>
+      </form>
+    </section>
+
+    <aside class="audit" id="audit-pane">
+      <div class="audit-empty">Audit appears here after each answer.</div>
+    </aside>
+  </main>
+
+  <div id="snippet-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <span id="snippet-title"></span>
+        <button id="snippet-close" type="button" aria-label="close">&times;</button>
+      </div>
+      <pre id="snippet-body"></pre>
+    </div>
+  </div>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

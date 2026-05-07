@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: codebase-investigator
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: AGENT_MODEL
+        value: gemini-2.5-pro
+      - key: JUDGE_MODEL
+        value: gemini-2.5-flash
+      - key: REPO_CACHE_DIR
+        value: /tmp/repos_cache

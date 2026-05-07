@@ -1,0 +1,28 @@
+{
+  "name": "codebase-investigator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsx --test 'src/**/*.test.ts'",
+    "dev": "tsx watch --env-file=.env src/server.ts",
+    "start": "tsx --env-file=.env src/server.ts",
+    "smoke": "tsx --env-file=.env src/scripts/tools-smoke.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^1.52.0",
+    "@hono/node-server": "^2.0.1",
+    "hono": "^4.12.18",
+    "simple-git": "^3.36.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}
